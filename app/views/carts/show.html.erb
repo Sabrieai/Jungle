@@ -4,9 +4,10 @@
     <h1>My Cart</h1>
   </header>
   <% if enhanced_cart.length == 0 %>
-  <h1> Your cart is empty lets fix that! </h1>
-  <h2> <%= link_to '🛍 Shop', :root %> </h2>
- 
+  <div class="alert alert-info" role="alert">
+  <h2> Your cart is empty lets fix that! </h2>
+</div>
+<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> 🛍 SHOP </a>
 <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
