@@ -1,2 +1,10 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<header> 
+<h1> My Dashboard </h1>
+</header>
+<div class="alert alert-info" role="alert">
+<h1> We currently sell <%=@product_count%> products in <%=@category_count%> categories!</h1>
+</div>
+<a href="/admin/products" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Add products </a>
+
+
+
