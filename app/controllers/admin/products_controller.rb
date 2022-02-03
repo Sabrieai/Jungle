@@ -1,10 +1,6 @@
 class Admin::ProductsController < ApplicationController
 
-  
-  #raise ENV["AUTHENTICATION_USERNAME"],
-  # password: ENV["AUTHENTICATION_PASSWORD"]
-
-  http_basic_authenticate_with name: "dhh", password: "secret"
+ #http_basic_authenticate_with name: ENV["HTTP_BASIC_USER"], password: ENV["HTTP_BASIC_PASSWORD"]
 
 
   def index
