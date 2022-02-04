@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/users/create'
+      redirect_to [:users]
     end
   end
   private
