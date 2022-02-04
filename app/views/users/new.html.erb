@@ -3,15 +3,15 @@
 <%= form_for :user, url: [:users] do |f| %>
   <div class="well">
   <div class="form-group">
-  First Name: <%= f.text_field :first_name, class: "form-control"%>
+  First Name: <%= f.text_field :first_name, placeholder: "Enter your first name", class: "form-control"%>
   <br>
-  Last Name: <%= f.text_field :last_name, class: "form-control" %>
+  Last Name: <%= f.text_field :last_name, placeholder: "Enter your last name", class: "form-control" %>
   <br>
-  Email: <%= f.text_field :email, class: "form-control" %>
+  Email: <%= f.text_field :email, placeholder: "Enter your email", class: "form-control" %>
   <br>
-  Password: <%= f.password_field :password, class: "form-control" %>
+  Password: <%= f.password_field :password, placeholder: "Enter your password", class: "form-control" %>
   <br>
-  Password Confirmation: <%= f.password_field :password_confirmation, class: "form-control" %>
+  Password Confirmation: <%= f.password_field :password_confirmation, placeholder: "Confirm your password", class: "form-control" %>
   </div>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
