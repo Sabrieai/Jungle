@@ -42,9 +42,13 @@
       <% end %>
       <%end%>
     </li>
+  
     <li>
-    <%= link_to session_path do %>
-      Logout
+    <% if current_user%>
+    <%:id = session[:user_id]%>
+    <%= link_to 'Logout', [:sessions,:id ], :method => 'delete' do %>
+      Logout 
+    <% end %>
     <% end %>
   </li>
        <li class="dropdown">
