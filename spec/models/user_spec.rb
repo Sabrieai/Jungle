@@ -87,6 +87,20 @@ RSpec.describe User, type: :model do
       expect(@user2).to be_nil
     end
 
+    it "should return user if there are spaces before or after their email" do 
+      @user = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
+      @user1 = User.authenticate_with_credentials("  buzz@cuts.com  ", "zzzsleep")
+
+      expect(@user1.id).to be @user.id
+    end
+
+    it "should return user if the email is in the wrong case" do 
+      @user = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
+      @user1 = User.authenticate_with_credentials("BUZZ@CUTS.COM", "zzzsleep")
+
+      expect(@user1.id).to be @user.id
+    end
+
   end
 
 end
