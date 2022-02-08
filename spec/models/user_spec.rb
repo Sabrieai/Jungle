@@ -45,18 +45,46 @@ RSpec.describe User, type: :model do
       expect(@user.id).to be_nil
     end
 
-    it "Should save when email is unique" do
+    it "should save when email is unique" do
       @user1 = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
       @user2 = User.create(first_name: "John",last_name:"Crowley", email: "Jo@hn.com", password: "pepe-the-frog", password_confirmation: "pepe-the-frog")
 
       expect(@user2.id).to be_present
     end
 
-    it "Shouldn't save when email is not unique" do
+    it "shouldn't save when email is not unique" do
       @user1 = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
       @user2 = User.create(first_name: "John",last_name:"Crowley", email: "Buzz@CUTS.com", password: "pepe-the-frog", password_confirmation: "pepe-the-frog")
 
       expect(@user2.id).to be_nil
+    end
+
+  end
+
+  describe '.authenticate_with_credentials' do
+
+    it "should return the correct user with their credentials" do 
+      @user1 = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
+      @user = User.authenticate_with_credentials("buzz@cuts.com", "zzzsleep")
+
+      expect(@user.id).to be @user1.id
+    end
+  
+    it "should return nil when email or password are blank" do 
+      @user = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
+      @user1 = User.authenticate_with_credentials("buzz@cuts.com", nil)
+      @user2 = User.authenticate_with_credentials(nil, "zzzsleep")
+
+      expect(@user2).to be_nil
+      expect(@user2).to be_nil
+    end
+    it "should return nil when email or password are invalid" do 
+      @user = User.create(first_name: "Buster",last_name:"Zippa", email: "buzz@cuts.com", password: "zzzsleep", password_confirmation: "zzzsleep")
+      @user1 = User.authenticate_with_credentials("buzz@cuts.com", "zzzresting")
+      @user2 = User.authenticate_with_credentials("fade@styles.com", "zzzsleep")
+
+      expect(@user2).to be_nil
+      expect(@user2).to be_nil
     end
 
   end
