@@ -11,7 +11,13 @@ RSpec.describe Product, type: :model do
       expect(@product.id).to be_present
     end
 
-    xit "Should have a name" do 
+    it "Should have a name" do 
+      @category = Category.create(name: 'Hair care')
+      puts @category
+      @product = Product.create(name: nil, quantity: 10, price: 50,category: @category)
+
+      expect(@product.id).to be_nil
+      expect(@product.errors.messages[:name]).to eq ["can't be blank"]
     end
 
     xit "should have a price" do 
