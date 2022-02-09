@@ -1,6 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 that allows users to buy items of thier choice and admins to create products and categories. At the home page users are met with all products, products can be sorted by category and appear with a sold out badge when quatntity is 0. Admins, once verified using http authentication, can also delete products if they choose. At the cart, users can increase the quantity of a product or remove a product from their cart. After ordering, users are met with a customized thank you message and a list of items they have purchsed. This list contians the product name, image, quantity purchases, and the total cost of that item towards the total order price.
+
+## Final Product
 
 ## Additional Steps for Apple M1 Machines
 
@@ -18,7 +20,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 5. Create .env file based on .env.example
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
-8. Run `bin/rails s -b 0.0.0.0` to start the server
+8. Run `bin/rails s` to start the server or `bin/rails s -b 0.0.0.0` on your VM
 
 ## Stripe Testing
 
