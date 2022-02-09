@@ -23,6 +23,8 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     #check for all products
     expect(page).to have_css 'article.product',count: 10
 
+    save_screenshot('Product_home_page.png')
+
     #click on detail button
     first('.btn-default').click
 
@@ -30,7 +32,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     expect(page).to have_content('Quantity')
 
     # DEBUG / VERIFY
-    save_screenshot
+    save_screenshot('Product_page.png')
 
   end
 
