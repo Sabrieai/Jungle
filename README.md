@@ -1,15 +1,14 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 that allows users to buy items of thier choice and admins to create products and categories. At the home page users are met with all products, products can be sorted by category and appear with a sold out badge when quatntity is 0. Admins, once verified using http authentication, can also delete products if they choose. At the cart, users can increase the quantity of a product or remove a product from their cart. After ordering, users are met with a customized thank you message and a list of items they have purchsed. This list contians the product name, image, quantity purchases, and the total cost of that item towards the total order price.
+A mini e-commerce application built with Rails 4.2 that allows users to buy items of thier choice and admins to create products and categories. At the home page users are met with all products, products can be sorted by category and appear with a sold out badge when quatntity is 0. Admins, once verified using http authentication, can also delete products if they choose. At the cart, users can increase the quantity of a product or remove a product from their cart. After ordering, users are met with a customized thank you message and a list of items they have purchsed. This list contians the product name, image, quantity purchases, and the total cost of that item towards the total order price. Jungle also comes with included model and feature tests using capybara. There is an included 🌴 favicon, but change it up, have fun, and make it yours!
 
 ## Final Product
 
-## Additional Steps for Apple M1 Machines
+## Additional Steps for VM Machines
 
-1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
-1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
+1. Make sure that you are runnning Ruby 2.3.5 (`ruby -v`)
 2. Remove Gemfile.lock
-3. Replace Gemfile with version provided [here](https://gist.githubusercontent.com/FrancisBourgouin/831795ae12c4704687a0c2496d91a727/raw/ce8e2104f725f43e56650d404169c7b11c33a5c5/Gemfile)
+3. Replace Gemfile with version provided [here](https://github.com/lighthouse-labs/jungle-rails/blob/master/Gemfile)
 
 ## Setup
 
@@ -32,4 +31,11 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
+* spring
 * Stripe
+* bcrypt-3.1.7
+* capybara
+* poltergeist
+
+## Run Capybara tests
+`bin/rspec`
