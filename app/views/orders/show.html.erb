@@ -3,8 +3,9 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %> </h1>
   </header>
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order! Here are your order details! Confirmation will be sent to <%= @order.email %></h4>
+  <div class="order-summary jumbotron" style="background-color:#A5D6A7">
+    <h4>Thank you for your order, <%= @user.first_name %>! Here are your order details! Confirmation will be sent to you at <%= @user.email %></h4>
+   
   </div>
   <table class="table table-bordered">
   <thead>
