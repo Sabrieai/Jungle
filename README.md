@@ -4,7 +4,13 @@ A mini e-commerce application built with Rails 4.2 that allows users to buy item
 
 ## Final Product
 
-## Additional Steps for VM Machines
+<img width="1260" alt="Screen Shot 2022-02-09 at 8 11 36 PM" src="https://user-images.githubusercontent.com/93690436/153318673-895c5f30-d1c2-429b-929d-b544dcf73ac7.png">
+
+![chrome-capture](https://user-images.githubusercontent.com/93690436/153317238-c0ecc2bf-4272-43c0-9933-229d35fc52ff.gif)
+
+![chrome-capture (1)](https://user-images.githubusercontent.com/93690436/153317389-5a02de80-a60d-4bc1-bb4e-689d28253d4d.gif)
+
+## Additional Steps for Virtual Machines
 
 1. Make sure that you are runnning Ruby 2.3.5 (`ruby -v`)
 2. Remove Gemfile.lock
